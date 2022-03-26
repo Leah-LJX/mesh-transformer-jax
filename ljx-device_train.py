@@ -5,6 +5,7 @@ import time
 import jax
 import numpy as np
 import optax
+import os
 
 import wandb
 from tqdm import tqdm
@@ -20,6 +21,8 @@ from google.cloud.exceptions import NotFound
 
 from mesh_transformer.util import clip_by_global_norm, additive_weight_decay
 
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'gpt-j-6b-algorithm-344208-720bc02923a4.json'
 
 def parse_args():
     # Parse command line arguments
@@ -258,6 +261,7 @@ if __name__ == "__main__":
     print('begin testing....')
     assert model_dir
     client = storage.Client()
+    print(dir(client))
 
     try:
         with open(f"gs://{bucket}/{model_dir}/meta.json", "r") as f:
@@ -272,17 +276,4 @@ if __name__ == "__main__":
             }, f)
     int('end testing...')
     ###
-
-    with jax.experimental.maps.mesh(devices, ('dp', 'mp')):
-        print("initializing network")
-        network = CausalTransformer(params)
-
-        while True:
-            if (step % ckpt_every == 1) or step == total_steps:
-                print(f"saving a checkpoint for step {step}")
-                save(network, step, bucket, model_dir,
-                     mp=cores_per_replica,
-                     aux={"train_loader": train_dataset.get_state()},
-                     delete_old=True,
-                     )
 
