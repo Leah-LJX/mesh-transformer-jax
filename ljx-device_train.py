@@ -274,6 +274,6 @@ if __name__ == "__main__":
                 "checkpoints": [],
                 "aux": {}
             }, f)
-    int('end testing...')
+    print('end testing...')
     ###
 
