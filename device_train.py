@@ -19,7 +19,8 @@ from google.cloud import storage
 from google.cloud.exceptions import NotFound
 
 from mesh_transformer.util import clip_by_global_norm, additive_weight_decay
-
+import os
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'gpt-j-6b-algorithm-344208-720bc02923a4.json'
 
 def parse_args():
     # Parse command line arguments
