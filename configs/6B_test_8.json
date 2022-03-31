@@ -10,14 +10,14 @@
   "seq": 2048,
   "cores_per_replica": 8,
   "per_replica_batch": 1,
-  "gradient_accumulation_steps": 32,
+  "gradient_accumulation_steps": 16,
 
-  "warmup_steps": 2593,
-  "anneal_steps": 23338,
+  "warmup_steps": 2,
+  "anneal_steps": 10,
   "lr": 1.2e-4,
   "end_lr": 1.2e-5,
   "weight_decay": 0.1,
-  "total_steps": 25931,
+  "total_steps": 12,
 
   "tpu_size": 8,
 
@@ -32,12 +32,12 @@
   "eval_harness_tasks":[
   ],
   
-  "val_batches": 11052,
-  "val_every": 500,
-  "ckpt_every": 500,
-  "keep_every": 10000,
+  "val_batches": 81,
+  "val_every": 10,
+  "ckpt_every": 10,
+  "keep_every": 10,
 
   "name": "GPT-J-6B_java",
-  "wandb_project": "mesh-transformer-jax",
+  "wandb_project": "mesh-transformer-jax-test",
   "comment": ""
 }
