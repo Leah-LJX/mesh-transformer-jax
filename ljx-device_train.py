@@ -262,18 +262,26 @@ if __name__ == "__main__":
     assert model_dir
     client = storage.Client()
     print(dir(client))
+    
+    bucket='codecontest-bucket'
+    path = 'test_result'
+    filename = '1'
+    content = '123456'
+    # create metadata file
+    with open(f"gs://{bucket}/{path}/{filename}", "a+") as f:
+        f.write(content)
 
-    try:
-        with open(f"gs://{bucket}/{model_dir}/meta.json", "r") as f:
-            meta = json.load(f)
-    except:
-        # create metadata file
-        with open(f"gs://{bucket}/{model_dir}/meta.json", "w") as f:
-            json.dump({
-                "step": 0,
-                "checkpoints": [],
-                "aux": {}
-            }, f)
-    print('end testing...')
+#     try:
+#         with open(f"gs://{bucket}/{model_dir}/meta.json", "r") as f:
+#             meta = json.load(f)
+#     except:
+#         # create metadata file
+#         with open(f"gs://{bucket}/{model_dir}/meta.json", "w") as f:
+#             json.dump({
+#                 "step": 0,
+#                 "checkpoints": [],
+#                 "aux": {}
+#             }, f)
+#     print('end testing...')
     ###
 
