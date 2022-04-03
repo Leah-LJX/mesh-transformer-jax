@@ -84,7 +84,8 @@ if __name__ == "__main__":
         tokenizer = transformers.GPT2TokenizerFast.from_pretrained('gpt2')
 
         while True:
-            context = input("Type input:")
+            context = "Andi and Budi were given an assignment to tidy up their bookshelf of n books. Each book is represented by the book title — a string s_i numbered from 1 to n, each with length m. Andi really wants to sort the book lexicographically ascending, while Budi wants to sort it lexicographically descending.\n\nSettling their fight, they decided to combine their idea and sort it asc-desc-endingly, where the odd-indexed characters will be compared ascendingly, and the even-indexed characters will be compared descendingly.\n\nA string a occurs before a string b in asc-desc-ending order if and only if in the first position where a and b differ, the following holds:\n\n  * if it is an odd position, the string a has a letter that appears earlier in the alphabet than the corresponding letter in b; \n  * if it is an even position, the string a has a letter that appears later in the alphabet than the corresponding letter in b. \n\nInput\n\nThe first line contains two integers n and m (1 ≤ n ⋅ m ≤ 10^6).\n\nThe i-th of the next n lines contains a string s_i consisting of m uppercase Latin letters — the book title. The strings are pairwise distinct.\n\nOutput\n\nOutput n integers — the indices of the strings after they are sorted asc-desc-endingly.\n\nExample\n\nInput\n\n\n5 2\nAA\nAB\nBB\nBA\nAZ\n\n\nOutput\n\n\n5 2 1 3 4\n\nNote\n\nThe following illustrates the first example.\n\n<image>"
+            #context = input("Type input:")
             tokens = tokenizer.encode(context)
 
             start = time.time()
