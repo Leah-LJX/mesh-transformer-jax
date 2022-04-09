@@ -1,0 +1,100 @@
+description:
+Monocarp wrote down two numbers on a whiteboard. Both numbers follow a specific format: a positive integer x with p zeros appended to its end.
+
+Now Monocarp asks you to compare these two numbers. Can you help him?
+
+Input
+
+The first line contains a single integer t (1 ≤ t ≤ 10^4) — the number of testcases.
+
+The first line of each testcase contains two integers x_1 and p_1 (1 ≤ x_1 ≤ 10^6; 0 ≤ p_1 ≤ 10^6) — the description of the first number.
+
+The second line of each testcase contains two integers x_2 and p_2 (1 ≤ x_2 ≤ 10^6; 0 ≤ p_2 ≤ 10^6) — the description of the second number.
+
+Output
+
+For each testcase print the result of the comparison of the given two numbers. If the first number is smaller than the second one, print '<'. If the first number is greater than the second one, print '>'. If they are equal, print '='.
+
+Example
+
+Input
+
+
+5
+2 1
+19 0
+10 2
+100 1
+1999 0
+2 3
+1 0
+1 0
+99 0
+1 2
+
+
+Output
+
+
+&gt;
+=
+&lt;
+=
+&lt;
+
+Note
+
+The comparisons in the example are: 20 > 19, 1000 = 1000, 1999 < 2000, 1 = 1, 99 < 100.
+solution:
+import java.util.*;
+public class Q1{
+
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=0;i<n;i++)
+        {
+
+            int n1=s.nextInt();
+            int m1=s.nextInt();
+            double y1=(double) n1;
+            String s1=Integer.toString(n1);
+            for(int j=s1.length()-1;j>=1;j--)
+            {
+
+                    m1++;
+                    y1/=10;
+            }
+
+
+
+            int n2=s.nextInt();
+            int m2=s.nextInt();
+            double y2=(double) n2;
+            String s2=Integer.toString(n2);
+            for(int j=s2.length()-1;j>=1;j--)
+            {
+
+                    m2++;
+                    y2/=10;
+
+            }
+            if(y1==y2 && m1==m2){
+                System.out.println("=");
+            }
+            else if(y1>y2 && m1==m2){
+                System.out.println(">");
+            }
+            else if(y1<y2 && m1==m2){
+                System.out.println("<");
+            }
+            else if(m1>m2){
+                System.out.println(">");
+            }
+            else{
+                System.out.println("<");
+            }
+
+        }
+    }
+}

@@ -1,0 +1,73 @@
+description:
+You are given an array consisting of all integers from [l, r] inclusive. For example, if l = 2 and r = 5, the array would be [2, 3, 4, 5]. What's the minimum number of elements you can delete to make the [bitwise AND](https://en.wikipedia.org/wiki/Bitwise_operation#AND) of the array non-zero?
+
+A bitwise AND is a binary operation that takes two equal-length binary representations and performs the AND operation on each pair of the corresponding bits.
+
+Input
+
+The first line contains one integer t (1 ≤ t ≤ 10^4) — the number of test cases. Then t cases follow.
+
+The first line of each test case contains two integers l and r (1 ≤ l ≤ r ≤ 2 ⋅ 10^5) — the description of the array.
+
+Output
+
+For each test case, output a single integer — the answer to the problem.
+
+Example
+
+Input
+
+
+5
+1 2
+2 8
+4 5
+1 5
+100000 200000
+
+
+Output
+
+
+1
+3
+0
+2
+31072
+
+Note
+
+In the first test case, the array is [1, 2]. Currently, the bitwise AND is 0, as 1\ \& \ 2 = 0. However, after deleting 1 (or 2), the array becomes [2] (or [1]), and the bitwise AND becomes 2 (or 1). This can be proven to be the optimal, so the answer is 1.
+
+In the second test case, the array is [2, 3, 4, 5, 6, 7, 8]. Currently, the bitwise AND is 0. However, after deleting 4, 5, and 8, the array becomes [2, 3, 6, 7], and the bitwise AND becomes 2. This can be proven to be the optimal, so the answer is 3. Note that there may be other ways to delete 3 elements.
+solution:
+//package Task1;
+
+import java.util.Scanner;
+
+public class NonZero {
+    public static long cal(long a,long b){
+        int c=(1<<(b+1));
+        long valueCur=(1<<b)*(a/c);
+        a%=c;
+        if(a>=c/2) valueCur+=(a-c/2+1);
+        return valueCur;
+    }
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        int numberTest=sc.nextInt();
+        while(numberTest-->0){
+            long left= sc.nextInt();
+            long right=sc.nextInt();
+            long maxtrix=0;
+            for(int i=0; i<20; i++){
+                maxtrix=Math.max(maxtrix,cal(right,i)-cal(left-1,i));
+
+            }
+            long result=(right-left+1)-maxtrix;
+            System.out.println(result);
+        }
+
+
+    }
+}

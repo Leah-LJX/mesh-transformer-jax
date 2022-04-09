@@ -1,0 +1,70 @@
+description:
+Luntik has decided to try singing. He has a one-minute songs, b two-minute songs and c three-minute songs. He wants to distribute all songs into two concerts such that every song should be included to exactly one concert.
+
+He wants to make the absolute difference of durations of the concerts as small as possible. The duration of the concert is the sum of durations of all songs in that concert.
+
+Please help Luntik and find the minimal possible difference in minutes between the concerts durations.
+
+Input
+
+The first line contains a single integer t (1 ≤ t ≤ 1000) — the number of test cases.
+
+Each test case consists of one line containing three integers a, b, c (1 ≤ a, b, c ≤ 10^9) — the number of one-minute, two-minute and three-minute songs.
+
+Output
+
+For each test case print the minimal possible difference in minutes between the concerts durations.
+
+Example
+
+Input
+
+
+4
+1 1 1
+2 1 3
+5 5 5
+1 1 2
+
+
+Output
+
+
+0
+1
+0
+1
+
+Note
+
+In the first test case, Luntik can include a one-minute song and a two-minute song into the first concert, and a three-minute song into the second concert. Then the difference will be equal to 0.
+
+In the second test case, Luntik can include two one-minute songs and a two-minute song and a three-minute song into the first concert, and two three-minute songs into the second concert. The duration of the first concert will be 1 + 1 + 2 + 3 = 7, the duration of the second concert will be 6. The difference of them is |7-6| = 1.
+solution:
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Raghu
+{
+	public static void main (String[] args)
+	{
+		Scanner sc= new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=1;i<=t;i++){
+		long a,b,c;
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=sc.nextInt();
+		minimumDiff(a,b,c);
+		}
+	}
+	static void minimumDiff(long a,long b,long c){
+	long result=a*1+b*2+c*3;
+		if(result%2==0){
+			System.out.println("0");
+		}
+		else{
+			System.out.println("1");
+		}
+  }
+}
