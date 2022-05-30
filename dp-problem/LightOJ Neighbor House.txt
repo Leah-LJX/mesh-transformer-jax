@@ -1,0 +1,36 @@
+description:
+The people of Mohammadpur have decided to paint each of their houses red, green, or blue. They've also decided that no two neighboring houses will be painted the same color. The neighbors of house i are houses i-1 and i+1. The first and last houses are not neighbors.
+
+You will be given the information of houses. Each house will contain three integers "R G B" (quotes for clarity only), where R, G and B are the costs of painting the corresponding house red, green, and blue, respectively. Return the minimal total cost required to perform the work.
+
+Input
+
+Input starts with an integer T (¡Ü 100), denoting the number of test cases.
+
+Each case begins with a blank line and an integer n (1 ¡Ü n ¡Ü 20) denoting the number of houses. Each of the next n lines will contain 3 integers "R G B". These integers will lie in the range [1, 1000].
+
+Output
+
+For each case of input you have to print the case number and the minimal cost.
+
+Example
+
+Input
+
+2
+4
+13 23 12
+77 36 64
+44 89 76
+31 78 45
+3
+26 40 83
+49 60 57
+13 89 99
+
+Output
+
+137
+96
+
+solution:
