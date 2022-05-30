@@ -1,0 +1,25 @@
+description:
+Given A sequence A of n numbers, ask what is the longest non-descending subsequence. 
+
+For a sequence p1< p2< ... < pk, which is the non-descending sub-sequence that needs to satisfy: A[p1]<= A[p2]<= A[p3]<=...<= A[pk].
+
+Input
+
+Line 1, an integer n; 
+Line 2, n integers representing A[i](n<=5000).
+
+Output
+
+An integer representing the length of the longest non-descending subsequence.
+
+Example
+
+
+Input
+
+7
+1 7 3 5 9 4 8
+
+
+Output
+4

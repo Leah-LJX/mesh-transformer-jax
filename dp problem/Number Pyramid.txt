@@ -1,0 +1,38 @@
+description:
+Consider the digital pyramid shown below. Write a program to calculate the maximum sum of numbers for a path that starts at the highest point and ends anywhere at the bottom
+Each step can go to the point on the lower left or the point on the lower right.
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5
+In the example above, the paths from 7 to 3 to 8 to 7 to 5 produce the maximum sum 30.
+
+Input
+
+The first line contains R(1<=R<=1000), indicating the number of rows.
+The following each line of integers contained in a particular row of the number pyramid. 
+All supplied integers are non-negative and not greater than 100.
+
+Output
+
+A single line contains the largest possible sum of that.
+
+Example
+
+
+Input
+
+5
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5
+
+
+Output
+
+30
+
+solution:

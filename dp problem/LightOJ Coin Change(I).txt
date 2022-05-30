@@ -1,0 +1,41 @@
+description:
+In a strange shop there are n types of coins of value A1, A2 ... An. C1, C2, ... Cn denote the number of coins of value A1, A2 ... An respectively. You have to find the number of ways you can make K using the coins.
+
+For example, suppose there are three coins 1, 2, 5 and we can use coin 1 at most 3 times, coin 2 at most 2 times and coin 5 at most 1 time. Then if K = 5 the possible ways are:
+
+(1, 1, 1, 2)
+
+(1, 2, 2)
+
+(5)
+
+So, 5 can be made in 3 ways.
+
+Input
+
+Input starts with an integer T (¡Ü 100), denoting the number of test cases.
+
+Each case starts with a line containing two integers n (1 ¡Ü n ¡Ü 50) and K (1 ¡Ü K ¡Ü 1000). The next line contains 2n integers, denoting A1, A2 ... An, C1, C2 ... Cn (1 ¡Ü Ai ¡Ü 100, 1 ¡Ü Ci ¡Ü 20). All Ai will be distinct.
+
+Output
+
+For each case, print the case number and the number of ways K can be made. The result can be large, so, print the result modulo 100000007.
+
+Example
+
+Input
+
+
+2
+3 5
+1 2 5 3 2 1
+4 20
+1 2 3 4 8 4 2 1
+
+Output
+
+
+3
+9
+
+solution:
